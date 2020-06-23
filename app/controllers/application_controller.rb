@@ -1,5 +1,5 @@
    # require '../../config/environment'
-
+ require 'pry'
 class App < Sinatra::Base
 
     set :views, Proc.new { File.join(root, "../views/") }
@@ -9,6 +9,7 @@ class App < Sinatra::Base
     end
   
   post '/teams' do
+    binding.pry
       @team = Team.new(name: params[:team][:name], motto: params[:team][:motto])
       members = params[:team][:members]
       @super_heroes = members.collect do |member|
