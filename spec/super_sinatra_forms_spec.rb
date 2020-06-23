@@ -18,7 +18,7 @@ describe App do
   describe 'POST /teams' do
     it 'submits the form' do
       visit '/'
-      binding.pry
+      
       fill_in("team[name]", :with => "Team Ruby")
       fill_in("team[motto]", :with => "We love Ruby!")
       fill_in("member1_name", :with => "Amanda")
